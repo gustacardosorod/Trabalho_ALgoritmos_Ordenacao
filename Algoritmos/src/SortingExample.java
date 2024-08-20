@@ -88,7 +88,7 @@ public class SortingExample {
 
     // Implementação do Insertion Sort
     public static void insertionSort(int[] arr) {
-        long tempoInicial = System.currentTimeMillis();
+        double tempoInicial = System.currentTimeMillis();
 
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -100,14 +100,14 @@ public class SortingExample {
             arr[j + 1] = key;
         }
 
-        long tempoFinal = System.currentTimeMillis();
-        long tempoExecucao = tempoFinal - tempoInicial;
+        double tempoFinal = System.currentTimeMillis();
+        double tempoExecucao = tempoFinal - tempoInicial;
         System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     //Implementação do Selection Sort
     public static void selectionSort(int[] arr) {
-        long tempoInicial = System.currentTimeMillis();
+        double tempoInicial = System.currentTimeMillis();
 
         int n = arr.length;
 
@@ -123,14 +123,14 @@ public class SortingExample {
             arr[i] = temp;
         }
 
-        long tempoFinal = System.currentTimeMillis();
-        long tempoExecucao = tempoFinal - tempoInicial;
+        double tempoFinal = System.currentTimeMillis();
+        double tempoExecucao = tempoFinal - tempoInicial;
         System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
     
     //Implementação do Merge Sort
     public static void mergeSort(int[] arr, int l, int r) {
-        long tempoInicial = System.currentTimeMillis();
+        double tempoInicial = System.currentTimeMillis();
 
         if (l < r) {
             int m = (l + r) / 2;
@@ -141,8 +141,8 @@ public class SortingExample {
             merge(arr, l, m, r);
         }
 
-        long tempoFinal = System.currentTimeMillis();
-        long tempoExecucao = tempoFinal - tempoInicial;
+        double tempoFinal = System.currentTimeMillis();
+        double tempoExecucao = tempoFinal - tempoInicial;
         System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
@@ -225,7 +225,7 @@ public class SortingExample {
 
     //Implementação do Heap Sort
     public static void heapSort(int[] arr) {
-        long tempoInicial = System.currentTimeMillis();
+        double tempoInicial = System.currentTimeMillis();
 
         int n = arr.length;
 
@@ -240,8 +240,8 @@ public class SortingExample {
             heapify(arr, i, 0);
         }
 
-        long tempoFinal = System.currentTimeMillis();
-        long tempoExecucao = tempoFinal - tempoInicial;
+        double tempoFinal = System.currentTimeMillis();
+        double tempoExecucao = tempoFinal - tempoInicial;
         System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
