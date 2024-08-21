@@ -53,6 +53,17 @@ public class OrdenacaoDecrescente {
         }
     }
     
+    public static void mergeSortDescending(int[] arr, int l, int r) {
+        if (l < r) {
+            int m = l + (r - l) / 2;
+    
+            mergeSortDescending(arr, l, m);
+            mergeSortDescending(arr, m + 1, r);
+    
+            mergeDescending(arr, l, m, r);
+        }
+    }
+    
     public static void mergeDescending(int[] arr, int l, int m, int r) {
         int n1 = m - l + 1;
         int n2 = r - m;
@@ -60,9 +71,9 @@ public class OrdenacaoDecrescente {
         int[] L = new int[n1];
         int[] R = new int[n2];
     
-        for (int i = 0; i > n1; --i)
+        for (int i = 0; i < n1; ++i)
             L[i] = arr[l + i];
-        for (int j = 0; j > n2; --j)
+        for (int j = 0; j < n2; ++j)
             R[j] = arr[m + 1 + j];
     
         int i = 0, j = 0;
@@ -92,6 +103,7 @@ public class OrdenacaoDecrescente {
             k++;
         }
     }
+    
     
       
     public void quickSort(int[] arr, int low, int high) {
