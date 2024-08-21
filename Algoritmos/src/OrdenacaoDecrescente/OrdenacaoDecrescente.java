@@ -41,24 +41,13 @@ public class OrdenacaoDecrescente {
             arr[i] = temp;
         }
     }
-
-    public void mergeSort(int[] arr, int l, int r) {
-        if (l > r) {
+    
+    public static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
             int m = l + (r - l) / 2;
     
             mergeSort(arr, l, m);
             mergeSort(arr, m + 1, r);
-    
-            mergeDescending(arr, l, m, r);
-        }
-    }
-    
-    public static void mergeSortDescending(int[] arr, int l, int r) {
-        if (l < r) {
-            int m = l + (r - l) / 2;
-    
-            mergeSortDescending(arr, l, m);
-            mergeSortDescending(arr, m + 1, r);
     
             mergeDescending(arr, l, m, r);
         }
