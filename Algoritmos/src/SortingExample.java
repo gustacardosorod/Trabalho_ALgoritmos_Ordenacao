@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+import OrdenacaoAleatoria.OrdenacaoAleatoria;
 import OrdenacaoCrescente.OrdenacaoCrescente;
 import OrdenacaoDecrescente.OrdenacaoDecrescente;
 
@@ -8,6 +9,7 @@ public class SortingExample {
 
     public static OrdenacaoCrescente ordenacaoCrescente = new OrdenacaoCrescente();
     public static OrdenacaoDecrescente ordenacaoDecrescente = new OrdenacaoDecrescente();
+    public static OrdenacaoAleatoria ordenacaoAleatoria = new OrdenacaoAleatoria();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -31,7 +33,7 @@ public class SortingExample {
             System.out.println("Erro ao ler o arquivo de entrada: " + e.getMessage());
         }
 
-        System.out.print("Escolha o algoritmo: ordenação crescente->(1: BubbleSort, 2: InsertionSort, 3: SelectionSort, 4: MergeSort, 5: QuickSort, 6: HeapSort), ordenação descrecente->(7: BubbleSort, 8: InsertionSort, 9: SelectionSort, 10: MergeSort, 11: QuickSort, 12: HeapSort) ");
+        System.out.print("Escolha o algoritmo: ordenação crescente->(1: BubbleSort, 2: InsertionSort, 3: SelectionSort, 4: MergeSort, 5: QuickSort, 6: HeapSort), ordenação descrecente->(7: BubbleSort, 8: InsertionSort, 9: SelectionSort, 10: MergeSort, 11: QuickSort, 12: HeapSort), ordenação aleatória->(13: BubbleSort, 14: InsertionSort, 15: SelectionSort, 16: MergeSort, 17: QuickSort, 18: HeapSort): ");
         int choice = scanner.nextInt();
         
 
@@ -74,7 +76,28 @@ public class SortingExample {
                 break;
             case 12:
                 ordenacaoDecrescente.heapSort(numbers);
-                break;    
+                break;
+                
+            //Ordenação Aleatória (Embaralhamento)
+            case 13:
+                ordenacaoAleatoria.bubbleShuffle(numbers);
+                break;
+            case 14:
+                ordenacaoAleatoria.insertionShuffle(numbers);
+                break;
+            case 15:
+                ordenacaoAleatoria.selectionShuffle(numbers);
+                break;
+            case 16:
+                ordenacaoAleatoria.mergeShuffle(numbers, n, choice);
+                break;
+            case 17:
+                ordenacaoAleatoria.quickShuffle(numbers, n, choice);
+                break;
+            case 18:
+                ordenacaoAleatoria.heapShuffle(numbers);
+                break; 
+
             default:
                 System.out.println("Algoritmo de ordenação inválido.");
         }

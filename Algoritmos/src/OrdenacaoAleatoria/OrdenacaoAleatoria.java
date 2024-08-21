@@ -1,11 +1,12 @@
 package OrdenacaoAleatoria;
 
 public class OrdenacaoAleatoria {
-    public static void bubbleShuffle(int[] arr) {
+    
+    public void bubbleShuffle(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (Math.random() > 0.5) {  // Decide aleatoriamente se troca ou não
+                if (Math.random() > 0.5) {  
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -14,33 +15,33 @@ public class OrdenacaoAleatoria {
         }
     }
 
-    public static void insertionShuffle(int[] arr) {
+    public void insertionShuffle(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
-            int j = (int) (Math.random() * (i + 1));  // Escolhe aleatoriamente uma posição até i
+            int j = (int) (Math.random() * (i + 1));  
             int temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
         }
     }
 
-    public static void selectionShuffle(int[] arr) {
+    public void selectionShuffle(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
-            int j = i + (int) (Math.random() * (n - i));  // Escolhe aleatoriamente uma posição após i
+            int j = i + (int) (Math.random() * (n - i));  
             int temp = arr[j];
             arr[j] = arr[i];
             arr[i] = temp;
         }
     }
 
-    public static void mergeShuffle(int[] arr, int l, int r) {
+    public void mergeShuffle(int[] arr, int l, int r) {
         if (l < r) {
             int m = l + (r - l) / 2;
             mergeShuffle(arr, l, m);
             mergeShuffle(arr, m + 1, r);
             merge(arr, l, m, r);
     
-            // Embaralha a lista resultante após o merge
+            
             if (Math.random() > 0.5) {
                 int i = l + (int)(Math.random() * (r - l + 1));
                 int j = l + (int)(Math.random() * (r - l + 1));
@@ -90,7 +91,7 @@ public class OrdenacaoAleatoria {
         }
     }
 
-    public static void quickShuffle(int[] arr, int low, int high) {
+    public void quickShuffle(int[] arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
             quickShuffle(arr, low, pi - 1);
@@ -99,14 +100,14 @@ public class OrdenacaoAleatoria {
     }
     
     public static int partition(int[] arr, int low, int high) {
-        int pivotIndex = low + (int)(Math.random() * (high - low + 1));  // Pivô aleatório
+        int pivotIndex = low + (int)(Math.random() * (high - low + 1));  
         int pivot = arr[pivotIndex];
         arr[pivotIndex] = arr[high];
         arr[high] = pivot;
     
         int i = (low - 1);
         for (int j = low; j < high; j++) {
-            if (Math.random() > 0.5) {  // Decide aleatoriamente se troca ou não
+            if (Math.random() > 0.5) {  
                 i++;
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -121,7 +122,7 @@ public class OrdenacaoAleatoria {
         return i + 1;
     }
     
-    public static void heapShuffle(int[] arr) {
+    public void heapShuffle(int[] arr) {
         int n = arr.length;
     
         for (int i = n / 2 - 1; i >= 0; i--)
@@ -132,7 +133,7 @@ public class OrdenacaoAleatoria {
             arr[0] = arr[i];
             arr[i] = temp;
     
-            if (Math.random() > 0.5) {  // Decide aleatoriamente se troca ou não
+            if (Math.random() > 0.5) {  
                 heapify(arr, i, 0);
             }
         }
