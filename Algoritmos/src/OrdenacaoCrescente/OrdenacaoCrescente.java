@@ -3,8 +3,7 @@ package OrdenacaoCrescente;
 public class OrdenacaoCrescente {
 
     public void bubbleSort(int[] arr) {
-        double tempoInicial = System.currentTimeMillis();
-
+        
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -15,14 +14,9 @@ public class OrdenacaoCrescente {
                 }
             }
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     public void insertionSort(int[] arr) {
-        double tempoInicial = System.currentTimeMillis();
 
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -33,15 +27,10 @@ public class OrdenacaoCrescente {
             }
             arr[j + 1] = key;
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     public void selectionSort(int[] arr) {
-        double tempoInicial = System.currentTimeMillis();
-
+       
         int n = arr.length;
 
         for (int i = 0; i < n - 1; i++) {
@@ -55,14 +44,9 @@ public class OrdenacaoCrescente {
             arr[minIdx] = arr[i];
             arr[i] = temp;
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     public void mergeSort(int[] arr, int l, int r) {
-        double tempoInicial = System.currentTimeMillis();
 
         if (l < r) {
             int m = (l + r) / 2;
@@ -70,10 +54,6 @@ public class OrdenacaoCrescente {
             mergeSort(arr, m + 1, r);
             merge(arr, l, m, r);
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     private static void merge(int[] arr, int l, int m, int r) {
@@ -116,7 +96,6 @@ public class OrdenacaoCrescente {
     }
 
     public void quickSort(int[] arr, int low, int high) {
-        double tempoInicial = System.currentTimeMillis();
 
         if (low < high) {
             int pi = partition(arr, low, high);
@@ -124,10 +103,6 @@ public class OrdenacaoCrescente {
             quickSort(arr, low, pi);
             quickSort(arr, pi + 1, high);
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     private static int partition(int[] arr, int low, int high) {
@@ -153,7 +128,6 @@ public class OrdenacaoCrescente {
     }
 
     public void heapSort(int[] arr) {
-        double tempoInicial = System.currentTimeMillis();
 
         int n = arr.length;
 
@@ -167,10 +141,6 @@ public class OrdenacaoCrescente {
 
             heapify(arr, i, 0);
         }
-
-        double tempoFinal = System.currentTimeMillis();
-        double tempoExecucao = tempoFinal - tempoInicial;
-        System.out.println("Tempo de execução em milissegundos: " + tempoExecucao);
     }
 
     private void heapify(int[] arr, int n, int i) {
